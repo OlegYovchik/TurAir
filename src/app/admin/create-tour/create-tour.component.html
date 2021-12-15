@@ -1,0 +1,46 @@
+<form [formGroup]='formTour' (ngSubmit)='submit()'>
+  <h1>Створення нового туру</h1>
+  <div class="form-control">
+    <label for="hotel">Готель</label>
+    <input type="text" name="hotel" placeholder="Готель" formControlName='hotel'>
+    <div class="validation" *ngIf='formTour.get("hotel")!.invalid && formTour.get("hotel")!.touched'>
+      <small *ngIf='formTour.get("hotel")!.errors!.required'>Введіть назву готеля!<br></small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="country">Країна</label>
+    <input type="text" name="country" placeholder="Країна" formControlName='country'>
+    <div class="validation" *ngIf='formTour.get("country")!.invalid && formTour.get("country")!.touched'>
+      <small *ngIf='formTour.get("country")!.errors!.required'>Введіть назву країни!<br></small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="title">Опис туру</label>
+    <quill-editor formControlName='title' placeholder='Опис туру'></quill-editor>
+    <div class="validation" *ngIf='formTour.get("title")!.invalid && formTour.get("title")!.touched'>
+      <small *ngIf='formTour.get("title")!.errors!.required'>Введіть опис туру!<br></small>
+    </div>
+  </div>
+  <div class="form-control-date">
+    <label for="date">Дата початку тура</label>
+    <input type="date" name="date" formControlName="date">
+    <div class="validation" *ngIf='formTour.get("date")!.invalid && formTour.get("date")!.touched'>
+      <small *ngIf='formTour.get("date")!.errors!.required'>Введіть дату початку тура!<br></small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="price">Ціна</label>
+    <input type="text" name="price" formControlName="price">
+    <div class="validation" *ngIf='formTour.get("price")!.invalid && formTour.get("price")!.touched'>
+      <small *ngIf='formTour.get("price")!.errors!.required'>Введіть ціну!<br></small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="status">Горячий тур</label>
+    <input type='checkbox' name='status' formControlName='status' value='hot'>  
+  </div>
+  <div class="btn-block">
+    <button class="btn" type="submit" [disabled]="formTour.invalid">Додати</button>
+    <button class="btn" (click)='returnDash()'>Назад</button>
+  </div>
+</form>

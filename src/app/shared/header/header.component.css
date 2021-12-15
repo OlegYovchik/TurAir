@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(110, 103, 103, 0.452);
+}
+.brand, .buttons{
+    padding:0 3px;
+    display: flex;
+    flex-direction: row;
+}
+.brand{
+    padding-top: 2px;
+    line-height: 50%;
+    border-bottom: 2px solid black;
+}
+.logo{
+    height: 50px;
+    border-radius: 5px;
+}
+.buttons{
+    border-bottom: 2px solid black;
+    height: 43px;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 680px) {
+    h1{
+        font-size: 4vw;
+    }
+}
+h1{
+    color: white;
+    padding-left: 10px;
+}
+
+a:hover{
+    background-color: rgba(88, 87, 87, 0.65);
+}
+a{
+    width: 80px;
+    height: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(8, 8, 8,0.65);
+    text-align: center;
+    border-radius: 5px;
+    line-height: 150%;
+    cursor: pointer;
+    font-size: 14px;
+}
+.active{
+    background-color: rgb(8, 8, 8,0.85);
+}

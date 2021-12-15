@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="main" *ngIf='tours.length; else loading'>
+    <div class="buttons-block">
+        <button class="btn" (click)='sorting("price")'>Сортування по ціні</button>
+        <button class="btn" (click)='sorting("date")'>Сортування по даті вильоту</button>
+        <button class="btn" (click)='sorting("country")'>Сортування по країні</button>
+    </div>
+    <div class="block-tours">
+        <div class="card" *ngFor='let tour of tours'>
+            <div class="country">Країна: {{tour.country}}</div>
+            <div class="hotel">Готель: {{tour.hotel}}</div>
+            <div class="title" [innerHTML]=tour.title></div>
+            <div class="date">Дата початку: {{tour.date | date:'dd.MM.yyyy'}}</div>
+            <div class="price">Ціна: {{tour.price}}$</div>
+        </div>
+    </div>
+</div>
+<ng-template #loading><p class='info'>Йде завантаження...</p></ng-template>
+<app-footer></app-footer>
+

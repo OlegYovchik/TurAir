@@ -1,0 +1,81 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height: 76vh;
+}
+form{
+    flex-direction: column;
+}
+.btn {
+    display: inline-block;
+    width:100%;
+    background: #333333;
+    color: #fff;
+    padding: 0.4rem 1.3rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+}  
+.btn:hover {
+    opacity: 0.8;
+}
+.btn-back{
+    width: 60%;
+    margin: 5px auto;
+}
+.form-control {
+    display: block;
+    margin-top: 0.3rem;
+    margin-bottom: .5rem;
+    background-color: rgba(194, 115, 115, 0.192);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+input, select{
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+.alert{
+    border: 2px solid red;
+    background-color: wheat;
+    width: 75%;
+    margin:5px auto;
+    text-align: center;
+    color: rgb(238, 10, 10);
+    font-weight: 600;
+    padding: 10px;
+  }
+  .block-tours{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin:0px auto 10px;
+}
+.card{
+    width:70%;
+    box-sizing: border-box;
+    border: 2px solid rgb(184, 39, 39);
+    background-color: rgba(160, 55, 55, 0.808);
+    color: white;
+    box-shadow: 5px 5px 3px darkred;
+    padding: 3px;
+    margin-top: 10px;
+}
+.card:nth-child(even){
+    align-self: flex-end;
+}

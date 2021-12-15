@@ -1,0 +1,31 @@
+<div *ngIf="tours.length; else loading">
+    <div class="form-control">
+        <input type="text" placeholder="Пошук по готелю..." class="text-center" [(ngModel)]="searchTour">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>П/п</th>
+                <th>Країна</th>
+                <th>Готель</th>
+                <th>Дата початку тура</th>
+                <th>Ціна</th>
+                <th>Операція</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let tour of tours | searchTours: searchTour; let idx = index'>
+                <td>{{idx + 1}}</td>
+                <td>{{tour.country}}</td>
+                <td>{{tour.hotel}}</td>
+                <td>{{tour.date | date: 'dd.MM.yyyy'}}</td>
+                <td>{{tour.price}}</td>
+                <td>
+                    <button class='btn' [routerLink]="['/admin',tour.id,'edit']">Змінити</button>
+                    <button class='btn btn-danger' (click)='remove(tour.id!)'>Видалити</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #loading>Йде завантаження...</ng-template>

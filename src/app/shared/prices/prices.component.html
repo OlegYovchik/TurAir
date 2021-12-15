@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="main">
+        <div class='alert' *ngIf='errorSearch'>
+        {{errorSearch}}
+    </div>
+    <form [formGroup]='form' (ngSubmit)='submit()' class='form' [ngStyle]="{'display': search? 'none' : 'flex'}">
+        <div class="form-control">
+            <label for="country">Пошук по країнам:</label>
+            <select name='country' formControlName='country'>
+                <option selected>Вибір країни</option>
+                <option *ngFor='let country of countriesArr'>{{country}}</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="dateIn">Дата з:</label>
+            <input type="date" name="dateIn" formControlName='dateIn'>
+        </div>
+        <button type='submit' class='btn'>Пошук</button>
+    </form>
+    <div>
+    <div class="block-tours" [ngStyle]="{'display':toursSelect.length==0 ? 'none': 'flex'}">
+        <div class="card" *ngFor='let tour of toursSelect'>
+            <div class="country">Країна: {{tour.country}}</div>
+            <div class="hotel">Готель: {{tour.hotel}}</div>
+            <div class="title" [innerHTML]=tour.title></div>
+            <div class="date">Дата початку: {{tour.date | date:'dd.MM.yyyy'}}</div>
+            <div class="price">Ціна: {{tour.price}}$</div>
+        </div>
+    </div>
+        <button class='btn btn-back' [ngStyle]="{'display': !search ? 'none' : 'block'}" (click)='back()'>Назад</button>
+    </div>
+</div>
+<app-footer></app-footer>
+

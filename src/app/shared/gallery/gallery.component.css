@@ -1,0 +1,10 @@
+.main{
+    min-height: 76vh;
+}
+.carousel-control-next, .carousel-control-prev{
+    top: 50%;
+}
+.carousel{
+    width: 65vw;
+    margin: 5px auto;
+}

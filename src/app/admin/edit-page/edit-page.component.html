@@ -1,0 +1,50 @@
+<div *ngIf='form; else loading' class='form'>
+    <form [formGroup]='form' (ngSubmit)='submit()'>
+        <div class="form-control">
+            <label for="country">Країна</label>
+            <input type="text" name="country" placeholder="Країна" formControlName='country'>
+            <div class="validation" *ngIf='form.get("country")!.invalid && form.get("country")!.touched'>
+              <small *ngIf='form.get("country")!.errors!.required'>Введіть країну!<br></small>
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="hotel">Готель</label>
+            <input type="text" name="hotel" placeholder="Готель" formControlName='hotel'>
+            <div class="validation" *ngIf='form.get("hotel")!.invalid && form.get("hotel")!.touched'>
+              <small *ngIf='form.get("hotel")!.errors!.required'>Введіть назву готеля!<br></small>
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="title">Опис</label>
+            <quill-editor  formControlName='title'></quill-editor>
+            <div class="validation" *ngIf='form.get("title")!.invalid && form.get("title")!.touched'>
+              <small *ngIf='form.get("title")!.errors!.required'>Введіть опис!<br></small>
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="date">Дата початку</label>
+            <input type="date" name="date" formControlName='date'>
+            <div class="validation" *ngIf='form.get("date")!.invalid && form.get("date")!.touched'>
+              <small *ngIf='form.get("date")!.errors!.required'>Введіть дату початку!<br></small>
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="price">Ціна</label>
+            <input type="text" name="price" placeholder="Ціна" formControlName='price'>
+            <div class="validation" *ngIf='form.get("price")!.invalid && form.get("price")!.touched'>
+              <small *ngIf='form.get("price")!.errors!.required'>Введіть ціну!<br></small>
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="status">Горячий тур</label>
+            <input type='checkbox' name='status' formControlName='status' value='hot'>  
+          </div>
+          <div class="btn-block">
+            <button class='btn' type='submit' [disabled]='form.invalid || submitted'>Змінити</button>
+            <button class='btn' (click)=returnDash()>Назад</button>  
+          </div>
+    </form>
+</div>
+<ng-template #loading>
+    <p class="text-center">Завантаження...</p>
+</ng-template>

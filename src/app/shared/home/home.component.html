@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="home">
+      <div class='main'>
+         <div class='adver'>
+            <div class="img">
+               <img src="./assets/images/pict1.jpg" alt="pict1" class="pict1">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa iure velit exercitationem sit earum possimus reprehenderit iusto? Veritatis incidunt quasi obcaecati ducimus inventore reprehenderit eligendi, recusandae asperiores rem impedit cumque!</p>
+         </div>
+         <div class='adver'>
+            <div class="img reverse">
+               <img src="./assets/images/pict2.jpg" alt="pict1" class="pict1">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa iure velit exercitationem sit earum possimus reprehenderit iusto? Veritatis incidunt quasi obcaecati ducimus inventore reprehenderit eligendi, recusandae asperiores rem impedit cumque!</p>
+         </div>
+         <div class='adver'>
+            <div class="img">
+               <img src="./assets/images/pict3.jpg" alt="pict1" class="pict1">
+            </div>
+            <p>Lorem ipsum dolor sit amet. Veritatis incidunt quasi obcaecati ducimus inventore reprehenderit eligendi, recusandae asperiores rem impedit cumque!</p>
+         </div>
+         <div class='adver'>
+            <div class="img reverse">
+               <img src="./assets/images/pict2.jpg" alt="pict1" class="pict1">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa iure velit exercitationem sit earum possimus reprehenderit iusto? Veritatis incidunt quasi obcaecati ducimus inventore reprehenderit eligendi, recusandae asperiores rem impedit cumque!</p>
+         </div>
+      </div>
+      <div class='aside'>
+         <div class="weather" [class]='elem.weather[0].main' *ngFor='let elem of weatherBlocks'>
+            <span class="weatherHeader" >
+               Місто: {{elem.name}}<br>
+               Температура: {{elem.main.temp | number:'1.0-0'}}&#8451;<br>
+               Вітер: {{elem.wind.speed | number:'1.0-0'}}m/s
+            </span>
+         </div>
+      </div>
+</div>
+<app-footer></app-footer>

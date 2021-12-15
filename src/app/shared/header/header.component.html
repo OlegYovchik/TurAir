@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="brand">
+        <img src="./assets/images/brand.jpg" alt="logo" class="logo">
+        <h1>TurIair - з нами відпочивати веселіше;)</h1>    
+    </div>
+    <div class="buttons">
+        <a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Додому</a>
+        <a routerLink='/tour'  routerLinkActive="active">Тури</a>
+        <a routerLink='/hot' routerLinkActive="active">Гарячі</a>
+        <a routerLink='/gallery' routerLinkActive="active">Галерея</a>
+        <a routerLink='/about' routerLinkActive="active">Про нас</a>
+        <a routerLink='/admin' routerLinkActive="active">Адмін</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

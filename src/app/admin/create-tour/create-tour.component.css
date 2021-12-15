@@ -1,0 +1,50 @@
+.form{
+  width: 80%;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: column;
+}
+.form-control{
+background-color: rgba(238, 115, 115, 0.596);
+}
+label {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.validation {
+  color: rgb(145, 6, 6);
+}
+input {
+  width: 98%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+input.ng-invalid.ng-touched{
+  border: 2px solid rgba(255, 0, 0, 0.596)
+}
+input.ng-valid.ng-touched{
+  border: 2px solid rgba(0, 128, 0, 0.575)
+}
+input[type='checkbox']{
+  width: 5%;
+}
+.btn-block{
+  width: 100%;
+  margin-top: 5px;
+  text-align: center;
+}
+.btn{
+  width: 100px;
+}
+input[type='checkbox']{
+  margin: auto 5px;
+  padding: 5px;
+  width: 5%;
+}
+
+

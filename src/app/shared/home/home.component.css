@@ -1,0 +1,86 @@
+.home{
+    min-height: 76vh;
+    align-items: stretch;
+    display:flex;
+    flex-direction: row;
+}
+
+.main {
+    width: 77%;
+    flex-direction: column;
+    min-height: 100%;
+}
+.adver {
+    display: block;
+    margin: 5px;
+    width: 96%;
+    min-height: 35vw;
+    text-align: justify;
+    margin-top: 10px;
+}
+img:not(.reverse){
+    width: 70%;
+    float: left;
+    margin-right: 2px;
+}
+.reverse img{
+    clear: both;
+    float: right;
+    width: 70%;
+    margin-right: 2px;
+}
+img {
+    width:100%;
+}
+.clear, .clouds, .few_clouds,.shower,.shower_day,.snow,.snow_day,.storm{
+    margin: 3vh auto;
+    width: 16vw;
+    height: 20vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.aside{
+    width: 23%;
+    background-color:rgba(56,56,56,0.5);
+    border-left: 2px solid black;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+.weather{
+    width: 98%;
+    height: 100px;
+    border: 1px solid black;
+    margin: 25px auto;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.377);
+    font-size: 12px;
+    background-size: cover;
+
+}
+.Clear{
+    background-image: url(../../../assets/images/weather/Clear.jpg);
+}
+.Clouds {
+    background-image: url(../../../assets/images/weather/Clouds.jpg);
+}
+.Few_clouds {
+    background-image: url(../../../assets/images/weather/Few_clouds.jpg);
+}
+.Shower {
+    background-image: url(../../../assets/images/weather/Shower.jpg);
+}
+.Shower_day {
+    background-image: url(../../../assets/images/weather/Shower_day.jpg);
+}
+.Snow {
+    background-image: url(../../../assets/images/weather/Snow.jpg);
+}
+.Snow_day {
+    background-image: url(../../../assets/images/weather/Snow_day.jpg);
+}
+.Storm {
+    background-image: url(../../../assets/images/weather/Storm.jpg);
+}

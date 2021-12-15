@@ -1,0 +1,33 @@
+<div class='alert' *ngIf='message'>
+  {{message}}
+</div>
+<form [formGroup]="form" (ngSubmit)='submit()'>
+  <h1>Вхід адміністратора</h1>
+  <div class="form-control">
+    <label for="login">Логін</label>
+    <input type="text" name="login" placeholder="Логін" formControlName='login'>
+    <div class="validation" *ngIf='form.get("login")!.invalid && form.get("login")!.touched'>
+      <small *ngIf='form.get("login")!.errors!.required'>Введіть логін<br></small>
+      <small *ngIf='form.get("login")!.errors!.minlength'>
+        Введіть неменше {{form.get("login")!.errors!.minlength!.requiredLength}} символів. 
+        Зараз введено {{form.get('login')!.errors!.minlength!.actualLength}} символ(и/ів)!
+      </small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="password">Пароль</label>
+    <input type="password" name="password" placeholder='Пароль' formControlName='password'>
+    <div class="validation" *ngIf='form.get("password")!.invalid && form.get("password")!.touched'>
+      <small *ngIf='form.get("password")!.errors!.required'>Введіть пароль<br></small>
+      <small *ngIf='form.get("password")!.errors!.minlength'>
+        Введіть неменше {{form.get("password")!.errors!.minlength!.requiredLength}} символів. 
+        Зараз введено {{form.get('password')!.errors!.minlength!.actualLength}} символ(и/ів)!
+      </small>
+    </div>
+  </div>
+  <button type="submit" class="btn" [disabled]='form.invalid || submitted'>Вхід</button>
+  <div class="error" *ngIf='auth.error$ | async as error'>{{error}}</div>
+</form>
+<small>*Логін для входу admin@i.ua. Пароль 123456</small>
+
+
